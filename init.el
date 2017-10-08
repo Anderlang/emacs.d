@@ -30,7 +30,7 @@
 (fset 'yes-or-no-p 'y-or-n-p) ;;emacs 提示yes or no 时，只需輪入 y／n
 ;;(load-theme 'spacemacs-dark t) ;; 晚上皮肤
 ;;(load-theme 'spacemacs-light t) ;;白天皮肤
-(desktop-save-mode 1) ;;退出时保存当前状态
+;;(desktop-save-mode 1) ;;退出时保存当前状态,移到了init-sessions里
 (electric-pair-mode t) ;;自动补全括号
 
 (require 'init-themes) ;; 皮肤
@@ -40,7 +40,7 @@
 (require 'init-auto-complete) ;;自动补全,和company相似
 ;;(require 'init-company);;自动补全，和auto-complete相似
 (require 'init-web) ;;web开发
-(require 'init-emmet) ;;提高前端开发效率
+;;(require 'init-emmet) ;;提高前端开发效率,整合到init-web里
 (require 'init-undo) ;;撤销
 (require 'init-ido) ;;切换缓冲区和文件
 (require 'init-expand);;增强选择
@@ -49,9 +49,9 @@
 (require 'init-flycheck) ;;代码检查
 (require 'init-go) ;;go语言
 (require 'init-magit) ;;git版本管理
-
+(require 'init-sessions);;状态保持
 ;;(require 'init-jump) ;;增强跳转
-;;(require 'init-sessions)
+
 
 ;;(load "dash-autoloads")
 ;;(load "session-autoloads")
@@ -80,7 +80,8 @@
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (magit uptimes go-autocomplete yasnippet-snippets yasnippet company-web company auto-complete ace-window smex web-mode dash pyim-wbdict pyim spacemacs-theme))))
+    (company session magit uptimes go-autocomplete yasnippet-snippets yasnippet auto-complete ace-window smex web-mode dash pyim-wbdict pyim spacemacs-theme)))
+ '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

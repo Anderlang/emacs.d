@@ -1,3 +1,4 @@
-(require 'company)
+(use-package company
+  :ensure t)
 
 (provide 'init-company)
