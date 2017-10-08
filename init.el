@@ -50,6 +50,7 @@
 (require 'init-go) ;;go语言
 (require 'init-magit) ;;git版本管理
 (require 'init-sessions);;状态保持
+(require 'init-yasnippet) ;; 输入模板
 ;;(require 'init-jump) ;;增强跳转
 
 
