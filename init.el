@@ -20,7 +20,6 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 ;;(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-
 (tool-bar-mode 0) ;;不要工具栏
 (menu-bar-mode 0) ;;不要菜单栏
 (scroll-bar-mode 0) ;;不要滚动条
@@ -28,10 +27,8 @@
 (global-hl-line-mode 1) ;;高亮显示当前行
 (setq inhibit-startup-message t) ;; 关闭启动界面
 (fset 'yes-or-no-p 'y-or-n-p) ;;emacs 提示yes or no 时，只需輪入 y／n
-;;(load-theme 'spacemacs-dark t) ;; 晚上皮肤
-;;(load-theme 'spacemacs-light t) ;;白天皮肤
-;;(desktop-save-mode 1) ;;退出时保存当前状态,移到了init-sessions里
 (electric-pair-mode t) ;;自动补全括号
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-15")) ;;字体
 
 (require 'init-themes) ;; 皮肤
 (require 'init-window) ;;窗口操作
@@ -51,6 +48,8 @@
 (require 'init-magit) ;;git版本管理
 (require 'init-sessions);;状态保持
 (require 'init-yasnippet) ;; 输入模板
+(require 'init-youdao) ;;有道词典
+(require 'init-which-key) ;;自动提示快捷键
 ;;(require 'init-jump) ;;增强跳转
 
 

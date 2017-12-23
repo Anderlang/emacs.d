@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: a org article template 
-# key: neworg
+# key: gnew
 # --
 # H:5 只导出5级标题
 # ^:nil 不转义"_"和"^"; ^:{} 在“_"和"^" 后面跟"{}"，可更容易进行上下标的转义

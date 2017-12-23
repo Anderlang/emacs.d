@@ -10,23 +10,30 @@
 	 (setq web-mode-ac-sources-alist
 	       '(("css" . (ac-source-css-property))
 		 ("html" . (ac-source-words-in-buffer
-			    ac-source-html-tag))))
+			    ac-source-html-tag
+			    ac-source-abbrev))))
 	 (setq web-mode-enable-auto-closing t)
-	 (setq web-mode-enable-auto-quoting t)) ;
+	 (setq web-mode-enable-auto-quoting t)
+	 (setq web-mode-enable-current-element-highlight t);;高亮显示元素
+	 ) ;
 
 (use-package emmet-mode
-:ensure t
-:config
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'web-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+  :ensure t
+  :bind(("M-n" . emmet-next-edit-point) ;;下一个编辑点
+	("M-p" . emmet-prev-edit-point) ;;上一个编辑点
+	)
+  :config
+  (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+  (add-hook 'web-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+  (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+  
 )
 
 (use-package ac-html
   :ensure t)
 
 
-(defun setup-ac-for-html ()
+(defun setup-ac-for-html()
   ;; 默认的数据提供
   (require 'ac-html-default-data-provider)
   ;; Enable data providers,
@@ -35,9 +42,9 @@
   ;; 开始设置
   (ac-html-setup)
   ;; 自动补全来源
-  (setq ac-sources '(ac-source-html-tag
-                     ac-source-html-attr
-                     ac-source-html-attrv))
+  ;; (setq ac-sources '(ac-source-html-tag
+  ;;                    ac-source-html-attr
+  ;;                    ac-source-html-attrv))
   ;; 启动自动补全
   (auto-complete-mode t))
 

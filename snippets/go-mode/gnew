@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: gooid golang template 
+# key: gnew
+# --
+// Copyright 2017 Ander Author.  All rights reserved.
+
+// $2
+package $1
+
+import()
+
+$3
