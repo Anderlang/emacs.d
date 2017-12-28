@@ -1,4 +1,6 @@
-
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 ;; 使用elpa
 (require 'package) ;; You might already have this line
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
