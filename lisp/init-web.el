@@ -9,15 +9,7 @@
     
     	 (setq web-mode-engines-alist
     	       '(("django"    . "\\.html\\'"))) ;;可以根据实际语言选择对应模板，如golang
-   ;; 	 (setq web-mode-ac-sources-alist
-   ;; 	       '(("css" . (ac-source-css-property))
-   ;; 		 ("html" . (ac-source-words-in-buffer
-   ;; 			    ac-source-html-tag
-   ;; 			    ac-source-abbrev))))
-   ;; 	 (setq web-mode-enable-auto-closing t)
-   ;; 	 (setq web-mode-enable-auto-quoting t)
-   ;; 	 (setq web-mode-enable-current-element-highlight t);;高亮显示元素
-    ;; 	 ) ;
+
 	 (setq web-mode-ac-sources-alist
 	       '(
 		 ("php" . (ac-source-yasnippet ac-source-php-auto-yasnippets))
@@ -36,11 +28,9 @@
                    (setq emmet-use-css-transform t)
                  (setq emmet-use-css-transform nil))
 	       )))
-
 	 (setq web-mode-enable-auto-closing t)
    	 (setq web-mode-enable-auto-quoting t)
    	 (setq web-mode-enable-current-element-highlight t);;高亮显示元素
-	 
 	 )
 (use-package emmet-mode
   :ensure t
