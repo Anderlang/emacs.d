@@ -4,19 +4,44 @@
 (use-package web-mode
     :ensure t
     :config
-	 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-	 (setq web-mode-engines-alist
-	       '(("django"    . "\\.html\\'"))) ;;可以根据实际语言选择对应模板，如golang
+    (add-to-list 'auto-mode-alist '("/\\(views\\|html\\|templates\\)/.*\\.tmpl\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+    
+    	 (setq web-mode-engines-alist
+    	       '(("django"    . "\\.html\\'"))) ;;可以根据实际语言选择对应模板，如golang
+   ;; 	 (setq web-mode-ac-sources-alist
+   ;; 	       '(("css" . (ac-source-css-property))
+   ;; 		 ("html" . (ac-source-words-in-buffer
+   ;; 			    ac-source-html-tag
+   ;; 			    ac-source-abbrev))))
+   ;; 	 (setq web-mode-enable-auto-closing t)
+   ;; 	 (setq web-mode-enable-auto-quoting t)
+   ;; 	 (setq web-mode-enable-current-element-highlight t);;高亮显示元素
+    ;; 	 ) ;
 	 (setq web-mode-ac-sources-alist
-	       '(("css" . (ac-source-css-property))
-		 ("html" . (ac-source-words-in-buffer
-			    ac-source-html-tag
-			    ac-source-abbrev))))
-	 (setq web-mode-enable-auto-closing t)
-	 (setq web-mode-enable-auto-quoting t)
-	 (setq web-mode-enable-current-element-highlight t);;高亮显示元素
-	 ) ;
+	       '(
+		 ("php" . (ac-source-yasnippet ac-source-php-auto-yasnippets))
+		 ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
+		 ("css" . (ac-source-css-property ac-source-emmet-css-snippets))
+		 )
+	       )
+	 (add-hook 'web-mode-before-auto-complete-hooks
+          '(lambda ()
+             (let ((web-mode-cur-language
+                    (web-mode-language-at-pos)))
+               (if (string= web-mode-cur-language "php")
+                   (yas-activate-extra-mode 'php-mode)
+                 (yas-deactivate-extra-mode 'php-mode))
+               (if (string= web-mode-cur-language "css")
+                   (setq emmet-use-css-transform t)
+                 (setq emmet-use-css-transform nil))
+	       )))
 
+	 (setq web-mode-enable-auto-closing t)
+   	 (setq web-mode-enable-auto-quoting t)
+   	 (setq web-mode-enable-current-element-highlight t);;高亮显示元素
+	 
+	 )
 (use-package emmet-mode
   :ensure t
   :bind(("M-n" . emmet-next-edit-point) ;;下一个编辑点
@@ -28,27 +53,5 @@
   (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
   
 )
-
-(use-package ac-html
-  :ensure t)
-
-
-(defun setup-ac-for-html()
-  ;; 默认的数据提供
-  (require 'ac-html-default-data-provider)
-  ;; Enable data providers,
-  ;; currently only default data provider available
-  (ac-html-enable-data-provider 'ac-html-default-data-provider)
-  ;; 开始设置
-  (ac-html-setup)
-  ;; 自动补全来源
-  ;; (setq ac-sources '(ac-source-html-tag
-  ;;                    ac-source-html-attr
-  ;;                    ac-source-html-attrv))
-  ;; 启动自动补全
-  (auto-complete-mode t))
-
-(add-hook 'html-mode-hook 'setup-ac-for-html)
-
 
 (provide 'init-web)
