@@ -53,6 +53,7 @@
 (require 'init-youdao) ;;有道词典
 (require 'init-which-key) ;;自动提示快捷键
 (require 'init-export) ;; 导出
+(require 'init-project) ;;项目管理
 ;;(require 'init-jump) ;;增强跳转
 
 
