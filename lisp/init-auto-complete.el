@@ -1,7 +1,7 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (setq ac-use-quick-help nil)
-(setq ac-auto-start 2) ;; 输入4个字符才开始补全
+(setq ac-auto-start 1) ;; 输入1个字符开始补全
 (global-set-key "\M-/" 'auto-complete)  ;; 补全的快捷键，用于需要提前补全
 ;; Show menu 0.8 second later
 (setq ac-auto-show-menu 0.8)
