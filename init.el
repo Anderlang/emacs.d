@@ -32,6 +32,7 @@
 (electric-pair-mode t) ;;自动补全括号
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-15")) ;;字体
 
+
 (require 'init-themes) ;; 皮肤
 (require 'init-window) ;;窗口操作
 ;;(require 'init-smex) ;;快速输入命令,使用helm代替
@@ -47,6 +48,7 @@
 (require 'init-iedit) ;;批量编辑
 (require 'init-flycheck) ;;代码检查
 (require 'init-go) ;;go语言
+(require 'init-python) ;;python 语言
 (require 'init-magit) ;;git版本管理
 (require 'init-sessions);;状态保持
 (require 'init-yasnippet) ;; 输入模板
@@ -54,6 +56,7 @@
 (require 'init-which-key) ;;自动提示快捷键
 (require 'init-export) ;; 导出
 (require 'init-project) ;;项目管理
+;;(require 'init-eclim) ;; eclipse 插件
 ;;(require 'init-jump) ;;增强跳转
 
 
@@ -82,9 +85,11 @@
  '(custom-safe-themes
    (quote
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(eclim-eclipse-dirs (quote ("/opt/eclipse")))
+ '(eclim-executable "/opt/eclipse/eclim")
  '(package-selected-packages
    (quote
-    (company session magit uptimes go-autocomplete yasnippet-snippets yasnippet auto-complete ace-window smex web-mode dash pyim-wbdict pyim spacemacs-theme)))
+    (elpy company session magit uptimes go-autocomplete yasnippet-snippets yasnippet auto-complete ace-window smex web-mode dash pyim-wbdict pyim spacemacs-theme)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
