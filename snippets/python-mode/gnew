@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: python template 
+# key: gnew
+# --
+// Copyright 2018 Ander Author.  All rights reserved.
+
+# -*- coding: utf-8 -*-
+"""
+    $1.
+    :copyright: © 2018 by Ander.
+    :license: MIT, see LICENSE for more details.
+"""
+
+$2
