@@ -2,8 +2,6 @@
 # name: emacs lisp template 
 # key: gnew
 # --
-// Copyright 2018 Ander Author.  All rights reserved.
-
 ;;; package --- $1
 ;;; Commentary:
 ;;; $2
