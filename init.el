@@ -37,6 +37,8 @@
 (require 'init-window) ;;窗口操作
 ;;(require 'init-smex) ;;快速输入命令,使用helm代替
 (require 'init-helm) ;;快速输入
+(require 'init-helm-gtags) ;;各种代码开发的标签
+(require 'init-neotree) ;;目录树
 (require 'init-auto-complete) ;;自动补全,和company相似
 ;;(require 'init-company);;自动补全，和auto-complete相似
 (require 'init-web) ;;web开发
@@ -56,6 +58,7 @@
 (require 'init-which-key) ;;自动提示快捷键
 (require 'init-export) ;; 导出
 (require 'init-project) ;;项目管理
+
 ;;(require 'init-eclim) ;; eclipse 插件
 ;;(require 'init-jump) ;;增强跳转
 
